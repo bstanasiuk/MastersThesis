@@ -1,0 +1,67 @@
+\documentclass[en, openany, final, 12pt, oneside]{mgr}
+
+%\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{pgfpages}
+
+\usepackage{graphicx}
+\usepackage{psfrag}
+
+
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{subfig}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hhline}
+
+\usepackage{epstopdf}
+\usepackage{url}
+
+\newcommand{\R}{I\!\!R}
+\newtheorem{theorem}{Twierdzenie}[section]
+
+\usepackage{verbatim}
+
+\usepackage{listings}
+\lstset{
+language=[sharp]C,
+basicstyle=\small\sffamily,
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+}
+
+\title{ }
+\engtitle{ }
+\author{ }
+\supervisor{ }
+
+\field{}
+
+
+\begin{document}
+\bibliographystyle{plain}
+
+%\maketitle
+
+\tableofcontents
+\chapter{Background}
+\input{background.tex}
+
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+
+\end{document}
+
