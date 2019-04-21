@@ -111,7 +111,7 @@ In his literature review, C. Boletsis proposes locomotion typology with the four
 \label{fig:TYPOLOGY}
 \end{figure}
 
-Although there are many promising solutions to VR locomotion, currently only a handful of them are used in mainstream VR games. Approaches like real-walking, reorientation, or redirected-walking locomotion offer creative way of exploring the virtual world, however, they often require dedicated and expensive hardware, large tracking space, or can be tiring in longer VR sessions. For these reasons VR developers mostly implement regular controller-based locomotion techniques. Unfortunately, joystick-based continuous motion is known for inducing VR sickness symptoms. This problem is now partly solved with effective dynamic field-of-view adjustments \cite{DYNAMICFOD}. To reduce the effects of motion sickness, games such as Robo Recall, Raw Data, or Vanishing Realms adopt Point \& Teleport locomotion \cite{TELEPORTATIONGAMES} that uses some kind of a curve as the indicator for the teleportation path (Figure \ref{fig:TELEPORTATIONCURVEIMAGE}). This technique has been proved by some researchers to be the least discomforting for the VR users, but it can also reduce a sense of presence within a VR environment \cite{TELEPORTATIONEFFECTS}. An alternative fixpoint teleport locomotion, which allows the player to quickly move between predefined node positions, can be applied to preserve accessibility while maintaining the feeling of presence \cite{NODEBASEDTELEPORTATION}.
+Although there are many promising solutions to VR locomotion, currently only a handful of them are used in mainstream VR games. Approaches like real-walking, reorientation, or redirected-walking locomotion offer creative way of exploring the virtual world, however, they often require dedicated and expensive hardware, large tracking space, and can be tiring in longer VR sessions. For these reasons VR developers mostly implement regular controller-based locomotion techniques. Unfortunately, joystick-based continuous motion is known for inducing VR sickness symptoms. This problem is now partly solved with effective dynamic field-of-view adjustments \cite{DYNAMICFOD}. Many popular VR games, such as Robo Recall, Raw Data and Vanishing Realms, adopt Point \& Teleport locomotion to reduce the effects of motion sickness \cite{TELEPORTATIONGAMES}. This technique uses a pointing curve as the indicator for the teleportation path (Figure \ref{fig:TELEPORTATIONCURVEIMAGE}). Although it has been proved by some researchers to be the least discomforting locomotion method for the VR users, its drawback is that it can also reduce a sense of presence within a VR environment \cite{TELEPORTATIONEFFECTS}. An alternative fixpoint teleport locomotion, which allows the player to quickly move between predefined node positions, can be applied to preserve accessibility while maintaining the feeling of presence \cite{NODEBASEDTELEPORTATION}.
 
 \begin{figure}[th]
 \centering
@@ -122,5 +122,43 @@ Although there are many promising solutions to VR locomotion, currently only a h
 
 There are several tricks and best practices for designing VR locomotion. Oculus in their developer documentation \cite{OCULUSDOC} lists general guidelines for acceleration, speed, user control, and direction of locomotion. Acceleration in VR not initiated by the user's physical movement is the main cause of discomfort. It is best to avoid any unpredictable increases of the size, frequency, and duration of the acceleration. Manipulations of speed, such as slow-motion or unnaturally rapid velocity, have been reported to be less discomforting than a normal human pace. In the real world, humans most often move forward or stand in place. When the VR movement is necessary, it is best to prevent backing up or strafing as it can be unusual optic flow pattern to the users. Open environments are also generally more comfortable. Moving the users through enclosed spaces, such as tunnels or hallways, should be avoided.
 
-\section{VR head clipping problem}
+\section{VR head collision problem}
+
+Although modern VR games use different techniques to move the player's avatar in the virtual environment, most of them have one thing in common. They use tracking systems to estimate the position and rotation of the user's head. The player now gets the ability to look around the virtual world with physical head movements, without the need of additional input controllers. Head tracking increases the feeling of presence in virtual reality, and drastically reduces VR sickness symptoms that are caused due to the mismatch between vestibular and visual senses \cite{HEADTRACKINGSYMPTOMS}. However, positional head tracking introduces a significant problem with head-object collisions in the virtual scene.
+
+In traditional video games, a virtual camera used to render a game world is under full control of the game logic. It usually follows the player's avatar in first-person or third-person view, or it is set during the game creation to some fixed position and orientation. The game engine then renders an image of the virtual world for that camera setup. For the most part, video games use collision detection systems to prevent the intersection of two or more objects on the game scene. If the player collides with a game object, such as a table or a wall, the player's avatar and the camera stops moving in that direction. The user is under the impression that he has been physically blocked by the object. 
+
+With the addition of head tracking to VR games, some of the camera control rules change or become obsolete. Almost all VR games are playable only in the first-person view. This makes the players feel immersed and present in the virtual world. The camera's position will still follow the avatar's head, but the camera's rotation is now set using the player’s real-world head rotation. Unfortunately, head tracking also changes the way how head-object collisions are normally resolved in games. The problem arises when the player's head should collide with some game object, but the user keeps moving his head in real-world without any obstructions. There are researchers that experiment with a haptic system that can simulate walls or heavy objects via electrical muscle stimulation \cite{HEPTICSYSTEM}. However, it could take years before this technology works properly and becomes available to the mainstream VR users. With the recent popularity of VR games, there is a need for solution that could be adapted by current developers.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=0.9\textwidth]{img/clipping.png}
+\caption{In the game Fallout 4 VR, players can see through the walls when they lean against them (image source: \cite{redditfallout})}
+\label{fig:FALLOUTCLIPPING}
+\end{figure}
+
+Many developers decide to ignore head collision problem and do not handle it in any way \cite{OCULUSDOCCLIPPING}. If the player positions himself close to some obstructing object in the virtual scene, and then starts leaning in the direction of the collision, the head rotation will still be updated according to the real-world position. The player will be able to look inside or past the colliding object. This results in unexpected clipping artifacts (Figure \ref{fig:FALLOUTCLIPPING}) that break the feeling of presence in virtual world. The ability to see through the game objects can also have undesirable effects on game mechanics. In games with the Point \& Teleport locomotion, the players can cheat by teleporting through the walls to skip harder game areas \cite{SKYRIMTELEPORT}. In shooter games, the players can see and shoot through the walls, giving them an unfair advantage over enemies. There is a need for solution that would at least restrict the forbidden view. For these reasons, VR developers try various techniques for handling head collisions in their games. The most popular methods are:
+
+\begin{itemize}
+\item Screen fade: The most commonly used method in commercial VR games. When the head collision is detected, the screen slowly fades to black or any other solid color (Figure \ref{fig:SCREENFADEIMAGE}). The view remains blacked-out for as long as the player's head collides with the object. This technique is relatively simple to implement, and that attracts many VR developers looking for a quick solution to the problem. However, the method has one weakness and may not work well with the Point \& Teleport locomotion technique. If the player teleports to some head-object colliding location, he will be stuck in a black void not knowing how to get back.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/screen_fade.png}
+\caption{  (image source: \cite{SCREENFADE})}
+\label{fig:SCREENFADEIMAGE}
+\end{figure}
+
+\item Object fade:
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/object_fade.png}
+\caption{  (image source: \cite{OBJECTFADE})}
+\label{fig:OBJECTFADEIMAGE}
+\end{figure}
+
+\item Camera collider: 
+\item Camera pushback: 
+\end{itemize}
 
