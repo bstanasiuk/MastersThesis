@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{psfrag}
 
+\usepackage{pdfpages}
 
 \usepackage{sidecap}
 \usepackage{wrapfig}
@@ -58,11 +59,9 @@ showstringspaces=false
 \chapter{Introduction}
 \input{introduction.tex}
 \chapter{Literature Review}
-\input{background.tex}
+\input{literature_review.tex}
 \chapter{Method}
 \input{method.tex}
-\chapter{Implementation}
-\input{implementation.tex}
 \chapter{Results}
 \input{results.tex}
 \chapter{Discussion}
@@ -73,6 +72,9 @@ showstringspaces=false
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{bibliography}
+
+\appendix
+\input{appendix.tex}
 
 \end{document}
 
