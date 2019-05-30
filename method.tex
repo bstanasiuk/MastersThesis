@@ -1,17 +1,17 @@
 \section{Research Questions and Hypotheses}
 
-There is a general lack of research into the VR head collisions problem. Current VR developers experiment with various solutions in their games, and all of these methods have their advantages and disadvantages. There is a disagreement in VR developers community over which solution should be used in future VR games. Some developers wonder if it is even worth the effort to implement any solution at all. Therefore, the goal of this study is to examine different solutions and to determine which one of them is best suited for modern VR games.
+There is a general lack of research into the VR head collisions problem. Current VR developers experiment with various solutions in their games, and all of these methods have their advantages and disadvantages. There is a disagreement in VR developers community over which solution should be used in future games. Some developers wonder if it is even worth the effort to implement any solution at all. Therefore, the goal of this study is to examine different solutions and to determine which one of them is best suited for modern VR games.
  
-There are several possible solutions to the VR head collisions problem, and they can be implemented in many different ways. Due to time constraints, only the four most popular methods were chosen for this study.
+There are several possible solutions to the VR head collisions problem, and they can be implemented in many different ways. Due to time constraints, only the following four most popular methods were chosen for this study:
 
 \begin{itemize}
-\item Screen fade: When the head collision is detected, the whole screen fades to black in the span of a second.
-\item Object fade: As the user's head gets closer to the collision, parts of the surrounding objects start to fade out.
-\item Camera collider: The player's head is surrounded by a rigidbody collider. When the head collision is detected, overlapping with the object is prevented.
-\item Camera push-back: If the player keeps colliding with the object for longer than a second, he is slowly pushed backwards until he leaves the object's boundaries.
+\item Screen fade: When the head collision is detected, the whole screen fades to black in the span of a second. The view remains blacked-out for as long as the player's head collides with the object.
+\item Delayed push-back: If the player keeps colliding with the object for longer than a second, he is slowly pushed backwards until he leaves the object's boundaries.
+\item Instant push-back: When the user starts to collide with some obstacle, a collision vector is computed and its projection on the horizontal plane is immediately added to the player's position.
+\item Teleportation: If the collision is detected and maintained for the duration of one second, the player is instantly teleported to the last know valid position. 
 \end{itemize}
 
-The quality of VR experience is affected by many factors. VR sickness, the sense of presence in virtual world, and the usability of the user interface are some of the main considerations in designing enjoyable VR experience. Some developers consider different factors to be more important than others. For this reason, the proposed solutions to the VR head collisions problem are examined from three different perspectives. The answers to the following research questions will help VR developers decide which particular solution to use:
+The quality of VR experience is affected by many factors. VR sickness, the sense of presence in virtual world, and the usability of the user interface are some of the main considerations in designing comfortable VR experience. Some developers consider different factors to be more important than others. For this reason, the proposed solutions to the VR head collisions problem are examined from three different perspectives. The answers to the following research questions will help VR developers decide which particular solution to use:
 
 \begin{itemize}
 \item RQ1: How the proposed solutions to the VR head collisions problem affect the virtual reality sickness?
@@ -41,17 +41,15 @@ Two questionnaires were prepared for the study. Before the experiment began, par
 
 \subsection{Simulator Sickness Questionnaire}
 
-The VR sickness section of post-test questionnaire was prepared using the Simulator Sickness Questionnaire (SSQ) \cite{SSQ}, a widely acknowledged standard for studying simulator sickness. The SSQ was developed in 1993 with the purpose of enhancing training efficiency in flight simulators. Due to the similarity of simulator sickness with VR sickness, in the recent years the SSQ was also used by many researchers studying comfortable VR locomotion \cite{TELEPORTATIONEFFECTS}\cite{NODEBASEDTELEPORTATION}\cite{SUSMETHODARTICLE}.   
-
-The SSQ consists of 16 most commonly occurring simulator sickness symptoms: general discomfort, fatigue, headache, eye strain, difficulty focusing, salivation increasing, sweating, nausea, difficulty concentrating, "fullness of the head", blurred vision, dizziness with eyes open, dizziness with eyes closed, vertigo, stomach awareness, and burping. These symptoms fall into three different categories: nausea-related, oculomotor-related, and disorientation-related. Each questionnaire item is scored on a four point scale (0-3): none, slight, moderate, and severe.  
+The VR sickness section of post-test questionnaire was prepared using the Simulator Sickness Questionnaire (SSQ) \cite{SSQ}, a widely acknowledged standard for studying simulator sickness. The SSQ was developed in 1993 with the purpose of enhancing training efficiency in flight simulators. Due to the similarity of simulator sickness with VR sickness, in the recent years the SSQ was also used by many researchers studying comfortable VR locomotion \cite{TELEPORTATIONEFFECTS}\cite{NODEBASEDTELEPORTATION}\cite{SUSMETHODARTICLE}. The SSQ consists of 16 most commonly occurring simulator sickness symptoms: general discomfort, fatigue, headache, eye strain, difficulty focusing, salivation increasing, sweating, nausea, difficulty concentrating, "fullness of the head", blurred vision, dizziness with eyes open, dizziness with eyes closed, vertigo, stomach awareness, and burping. These symptoms fall into three different categories: nausea-related, oculomotor-related, and disorientation-related. Each questionnaire item is scored on a four point scale (0-3): none, slight, moderate, and severe. The scores for each category and the total SSQ score are multiplied by the following weight factors: nausea is multiplied by 9.54, oculomotor by 7.58, disorientation by 13.92, and total SSQ by 3.74.
 
 \subsection{Presence Questionnaire}
 
-The Slayer-Usoh-Steed (SUS) \cite{SUS} presence questionnaire was used to prepare the second section of post-test questionnaire. It was chosen for this study because it is the second most cited presence questionnaire applicable for VR \cite{SUSEVIDENCE}, and it has a relatively short list of six questions in comparison to longer questionnaires. All SUS questions are based on one of the three themes: the extent to which the virtual environment becomes the dominant reality, the sense of being in the virtual environment, and the extent to which the virtual environment is remembered as a ``place''. Each question is answered on a scale from 1 to 7, where the higher score indicates greater sense of presence. The final presence score is the number of answers that have a score of 6 or 7.
+The Slayer-Usoh-Steed (SUS) \cite{SUS} presence questionnaire was used to prepare the second section of post-test questionnaire. It was chosen for this study because it is the second most cited presence questionnaire applicable for VR \cite{SUSEVIDENCE}, and it has a relatively short list of six questions in comparison to other, longer questionnaires. All SUS questions are based on one of the three themes: the extent to which the virtual environment becomes the dominant reality, the sense of being in the virtual environment, and the extent to which the virtual environment is remembered as a ``place''. Each question is answered on a scale from 1 to 7, where the higher score indicates greater sense of presence. The final presence score is a number of answers that have a score of 6 or 7.
 
 \subsection{Usability Questionnaire}
 
-In the usability section, the participants rated eight different factors: difficulty in understanding the method, difficulty in operating the method, feeling of being in control while using the method, required effort to use the method, feeling of tiredness while using the method, feeling of enjoyment while using the method, feeling of being overwhelmed while using the method, feeling of frustration while using the method. This approach was also used in two recent VR locomotion studies \cite{TELEPORTATIONSTUDY}\cite{NODEBASEDTELEPORTATION}. Each question was answered on a 5 point Likert scale, where 1 meant ``not at all'' and 5 meant ``very much''. The total usability score was calculated as follows: for each factor, except for the ``feeling of being in control'' and ``feeling of enjoyment'', the score was firstly subtracted from 5, and then it was added to the total score. In the two mentioned cases, the factor score was firstly subtracted by 1, and then it was added to the total score.
+In the usability section, the participants rated eight different factors: difficulty in understanding the method, difficulty in operating the method, feeling of being in control while using the method, required effort to use the method, feeling of tiredness while using the method, feeling of enjoyment while using the method, feeling of being overwhelmed while using the method, feeling of frustration while using the method. This exact approach was also used in two recent VR locomotion studies \cite{TELEPORTATIONSTUDY}\cite{NODEBASEDTELEPORTATION}. Each question was answered on a 5 point Likert scale, where 1 meant ``not at all'' and 5 meant ``very much''. The total usability score was calculated as follows: for each factor, except for the ``feeling of being in control'' and ``feeling of enjoyment'', the score was firstly subtracted from 5, and then it was added to the total score. In the two mentioned cases, the factor score was firstly subtracted by 1, and then it was added to the total score.
 
 \section{Implementation}
 
@@ -60,6 +58,13 @@ Opis narzędzi wykorzystanych do implementacji (Unity, VRTK, SteamVR).
 \subsection{Virtual Environment}
 
 Opis i zdjęcia wirtualnej sceny, w której będzie odbywa się eksperyment. Scena składa się z 10 różnych przedmiotów (meble, przedmioty, ściany). Scena dla każdej testowanej metody wygląda tak samo. Zmienia się tylko obsługa kolizji na jedną z czterech metod. Użytkownik aby ukończyć eksperyment musi skolidować głową z każdym z przedmiotów na scenie. Przedmioty, z którymi nie odbyła się jeszcze kolizja są podwietlone na zielony kolor. Po zakończeniu testowania metody, użytkownik ściąga VR headset, wypełnia ankietę i następnia rozpoczyna kolejny test. Scena w tym momencie jest zresetowana i używana jest inna obsługa kolizji.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/virtual_environment.png}
+\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\label{fig:veimplementation}
+\end{figure}
 
 \subsection{Screen Fade}
 
@@ -76,6 +81,34 @@ Opis implementacji i zdjęcia zaimplementowanej metody Camera Collider.
 \subsection{Camera Push-Back}
 
 Opis implementacji i zdjęcia zaimplementowanej metody Camera Push-Back.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/teleport_implementation.jpg}
+\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\label{fig:teleportimplementation}
+\end{figure}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/instant_implementation.jpg}
+\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\label{fig:instantimplementation}
+\end{figure}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/delayed_implementation.jpg}
+\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\label{fig:delayedimplementation}
+\end{figure}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/fade_implementation.jpg}
+\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\label{fig:fadeimplementation}
+\end{figure}
 
 \section{Experiment}
 
