@@ -1,43 +1,43 @@
 \section{Research Questions and Hypotheses}
 
-There is a general lack of research into the VR head collisions problem. Current VR developers experiment with various solutions in their games, and all of these methods have their advantages and disadvantages. There is a disagreement in VR developers community over which solution should be used in future games. Some developers wonder if it is even worth the effort to implement any solution at all. Therefore, the goal of this study is to examine different solutions and to determine which one of them is best suited for modern VR games.
+There is a general lack of research into the problem of VR head collisions. Current VR developers experiment with various solutions in their games, and all of these methods have their advantages and disadvantages. There is a disagreement in VR developers community over which solution should be used in future games. Some developers wonder if it is even worth the effort to implement any solution at all. Therefore, the goal of this study is to examine different solutions and to determine which one of them is best suited for modern VR games.
  
-There are several possible solutions to the VR head collisions problem, and they can be implemented in many different ways. Due to time constraints, only the following four most popular methods were chosen for this study:
+There are several possible solutions to the problem of VR head collisions, and they can be implemented in many different ways. Due to time constraints, only the following four most popular methods were chosen for this study:
 
 \begin{itemize}
 \item Screen fade: When the head collision is detected, the whole screen fades to black in the span of a second. The view remains blacked-out for as long as the player's head collides with the object.
 \item Delayed push-back: If the player keeps colliding with the object for longer than a second, he is slowly pushed backwards until he leaves the object's boundaries.
-\item Instant push-back: When the user starts to collide with some obstacle, a collision vector is computed and its projection on the horizontal plane is immediately added to the player's position.
-\item Teleportation: If the collision is detected and maintained for the duration of one second, the player is instantly teleported to the last know valid position. 
+\item Instant push-back: When the user starts to collide with some obstacle, a collision vector is computed and its projection on the horizontal plane is immediately added to the player's position. This effectively moves the user away from the object, preventing him from ever looking inside it.
+\item Teleportation: If the collision is detected and maintained for the duration of a second, the player is instantly teleported to the last know valid position. 
 \end{itemize}
 
-The quality of VR experience is affected by many factors. VR sickness, the sense of presence in virtual world, and the usability of the user interface are some of the main considerations in designing comfortable VR experience. Some developers consider different factors to be more important than others. For this reason, the proposed solutions to the VR head collisions problem are examined from three different perspectives. The answers to the following research questions will help VR developers decide which particular solution to use:
+The quality of VR experience is affected by many factors. VR sickness, the sense of presence in virtual world, and the usability of the user interface are some of the main considerations in designing comfortable VR experience. Some developers consider different factors to be more important than others. For this reason, the proposed solutions to the problem of VR head collisions are examined from three different perspectives. The answers to the following research questions will help VR developers decide which particular solution to use:
 
 \begin{itemize}
-\item RQ1: How the proposed solutions to the VR head collisions problem affect the virtual reality sickness?
-\item RQ2: How the proposed solutions to the VR head collisions problem affect the sense of presence?
-\item RQ3: How usable are the proposed solutions to the VR head collisions problem?
+\item RQ1: How the proposed solutions to the problem of VR head collisions affect the virtual reality sickness?
+\item RQ2: How the proposed solutions to the problem of VR head collisions affect the sense of presence?
+\item RQ3: How usable are the proposed solutions to the problem of VR head collisions?
 \end{itemize}
 
 The three null hypotheses corresponding to the research questions are as follows:
 
 \begin{itemize}
-\item H$_{\text{01}}$: All proposed solutions to the VR head collisions problem have the same effect on the virtual reality sickness.
-\item H$_{\text{02}}$: All proposed solutions to the VR head collisions problem have the same effect on the sense of presence.
-\item H$_{\text{03}}$: All proposed solutions to the VR head collisions problem have the same level of usability.
+\item H$_{\text{01}}$: All proposed solutions to the problem of VR head collisions have the same effect on the virtual reality sickness.
+\item H$_{\text{02}}$: All proposed solutions to the problem of VR head collisions have the same effect on the sense of presence.
+\item H$_{\text{03}}$: All proposed solutions to the problem of VR head collisions have the same level of usability.
 \end{itemize}
 
 The null hypotheses are tested against the following three alternative hypotheses:
 
 \begin{itemize}
-\item H$_{\text{A1}}$: Some proposed solutions to the VR head collisions problem have more positive effect than others on the virtual reality sickness.
-\item H$_{\text{A2}}$: Some solutions to the VR head collisions problem have more positive effect than others on the sense of presence.
-\item H$_{\text{A3}}$: Some solutions to the VR head collisions problem have higher level of usability than others.
+\item H$_{\text{A1}}$: Some proposed solutions to the problem of VR head collisions have more positive effect than others on the virtual reality sickness.
+\item H$_{\text{A2}}$: Some solutions to the problem of VR head collisions have more positive effect than others on the sense of presence.
+\item H$_{\text{A3}}$: Some solutions to the problem of VR head collisions have higher level of usability than others.
 \end{itemize}
 
 \section{Questionnaires}
 
-Two questionnaires were prepared for the study. Before the experiment began, participants were asked to fill in a demographic questionnaire. It included information about age, gender, previous experience with VR, and previous experience with motion sickness (see Appendix A). Each time after testing one of the solutions to the VR head collisions problem, the participants filled in a post-test questionnaire (see Appendix B). This questionnaire is composed of three sections, which correspond accordingly to the three research questions. First, the participants described what VR sickness symptoms they felt during the experiment (see question 2 in Appendix B). Next, they answered to six questions about the sense of presence in the virtual environment (see questions 3-8 in Appendix B). Finally, the participants rated the tested method with eight usability factors on the scale from 1 to 5 (see question 9 in Appendix B).
+Two questionnaires were prepared for the study. Before the experiment began, participants were asked to fill in a demographic questionnaire. It included information about age, gender, previous experience with VR, and previous experience with motion sickness (see Appendix A). Each time after testing one of the solutions to the problem of VR head collisions, the participants filled in a post-test questionnaire (see Appendix B). This questionnaire is composed of three sections, which correspond accordingly to the three research questions. First, the participants described what VR sickness symptoms they felt during the experiment (see question 2 in Appendix B). Next, they answered to six questions about the sense of presence in the virtual environment (see questions 3-8 in Appendix B). Finally, the participants rated the tested method with eight usability factors on the scale from 1 to 5 (see question 9 in Appendix B).
 
 \subsection{Simulator Sickness Questionnaire}
 
@@ -53,70 +53,82 @@ In the usability section, the participants rated eight different factors: diffic
 
 \section{Implementation}
 
-Opis narzędzi wykorzystanych do implementacji (Unity, VRTK, SteamVR).
+The virtual environment used in the experiment was implemented using the Unity game engine (version 2018.3.6) \cite{UNITY}. Unity is a cross-platform engine that allows creating high-quality 3D games and natively supports VR development. The SteamVR Unity Plugin (version 1.2.3) \cite{STEAMVR}, a software development kit and application programming interface developed by Valve, was used to smoothly interface virtual reality headset with Unity. SteamVR Unity Plugin manages the following functions: loading 3D models for VR controllers, handling input from the controllers, and estimating what the hands look like while using those controllers. Additionally, the application used some functionality of the Virtual Reality Toolkit (VRTK) (version 3.3.0) \cite{VRTK}. VRTK is a collection of useful design patterns and pre-built assets that aid solving common problems found when building for virtual reality. It covers common solutions for locomotion within virtual space, interactions with virtual objects and UI elements, body physics, and much more. 
 
 \subsection{Virtual Environment}
 
-Opis i zdjęcia wirtualnej sceny, w której będzie odbywa się eksperyment. Scena składa się z 10 różnych przedmiotów (meble, przedmioty, ściany). Scena dla każdej testowanej metody wygląda tak samo. Zmienia się tylko obsługa kolizji na jedną z czterech metod. Użytkownik aby ukończyć eksperyment musi skolidować głową z każdym z przedmiotów na scenie. Przedmioty, z którymi nie odbyła się jeszcze kolizja są podwietlone na zielony kolor. Po zakończeniu testowania metody, użytkownik ściąga VR headset, wypełnia ankietę i następnia rozpoczyna kolejny test. Scena w tym momencie jest zresetowana i używana jest inna obsługa kolizji.
+The virtual environment consisted of a large (30 x 30 m), blue platform with 10 red objects: a box, a ladder, a pallet, a shed, a barrel, and five different trees (see Figure \ref{fig:veimplementation}). The platform was surrounded by short mountains to prevent the users from wandering away from the designed experiment area. All 3D objects on the platform were imported from the free package found in the Unity Asset Store \cite{POLYGONCITY}. The platform itself was a scaled up cube model found in the default Unity assets. The terrain was generated by the Unity's built-in Terrain Engine.
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/virtual_environment.png}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\caption{The virtual environment used in the experiment: a large platform with 10 various objects on top.}
 \label{fig:veimplementation}
 \end{figure}
 
-\subsection{Screen Fade}
-
-Opis implementacji i zdjęcia zaimplementowanej metody Screen Fade.
-
-\subsection{Object Fade}
-
-Opis implementacji i zdjęcia zaimplementowanej metody Object Fade.
-
-\subsection{Camera Collider}
-
-Opis implementacji i zdjęcia zaimplementowanej metody Camera Collider.
-
-\subsection{Camera Push-Back}
-
-Opis implementacji i zdjęcia zaimplementowanej metody Camera Push-Back.
+At the start of the application, the user of VR headset was placed in the center of the platform. The user could move through the virtual environment by using the ``Point \& Teleport'' locomotion technique. When the user pressed and held the trackpad on the controller, a blue teleportation curve appeared. He could then teleport by pointing with his hand and releasing the trackpad. The user could only teleport to areas on the platform that were not occupied by the 10 objects. When the area was not viable, the curve's color was changed from blue to red (see Figure \ref{fig:tpimplementation}). The teleportation locomotion was implemented with the help of VRTK\_HeightAdjustTeleport script \cite{VRTK_TELEPORT}.
 
 \begin{figure}[th]
 \centering
-\includegraphics[width=1\textwidth]{img/teleport_implementation.jpg}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
-\label{fig:teleportimplementation}
+\includegraphics[width=1\textwidth]{img/implemented_teleportation.png}
+\caption{The color of teleportation curve was changed from blue to red when the teleportation path was interrupted by one of the objects.}
+\label{fig:tpimplementation}
 \end{figure}
 
-\begin{figure}[th]
-\centering
-\includegraphics[width=1\textwidth]{img/instant_implementation.jpg}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
-\label{fig:instantimplementation}
-\end{figure}
+The goal for the user was to teleport closely to one of the objects in the virtual environment. Next, he had to lean his head towards the object with the purpose of colliding with it. Once the collision was detected, one of the implemented solutions to the problem of VR head collisions was activated. Finally, when the user left the object's boundaries due to the workings of the method, the object's color was changed to green. The green color indicated that the interaction with this object was completed successfully. The user had to repeat the process with each one of the 10 objects until every obstacle was turned green. Because of the need to test four different solutions to the problem of VR head collisions, four different  virtual environments were prepared for the study. All virtual environments were visually identical to each other, with the same placement of the 10 virtual obstacles. The only difference between them was the method of handling VR head collisions.
 
-\begin{figure}[th]
-\centering
-\includegraphics[width=1\textwidth]{img/delayed_implementation.jpg}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
-\label{fig:delayedimplementation}
-\end{figure}
+\subsection{Solutions to the problem of VR Head Collisions}
+
+To detect if the collision with the object occurred, a trigger sphere collider \cite{SPHERECOLLIDER} with the radius of 0.1 m was attached to the user's virtual head. For handling head collisions, four different solutions were implemented: screen fade, delayed push-back, instant push-back, and teleportation. The methods were implemented by replicating the mechanisms seen in popular VR applications. In the screen fade method, the whole screen gradually faded to black in the span of a second when the collision was detected. Once the user left the object's boundaries by retracting his head back, the object's color was changed from red to green, and the screen gradually returned back to normal in the span of a second (see Figure \ref{fig:fadeimplementation}). 
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/fade_implementation.jpg}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\caption{A time slice of the implemented screen fade method. The images are ordered from left-to-right and top-to-bottom.}
 \label{fig:fadeimplementation}
+\end{figure}
+
+The implementation of the delayed push-back method was more complicated and required more steps. In every frame of the application, the collision-free headset position was saved to a variable if the user was not colliding with any object at the moment. After the collision was detected and maintained for the duration of a second, a collision vector between the last collision-free headset position and the current headset position was calculated. The user's position was then pushed back in the direction of the normalized collision vector with the speed of 1 m/s. The push-back effect was working until the user left the object's boundaries. During the duration of the effect, the head tracking system was fully functional and the user could still move his head in every direction. The color was changed to green once the user left the object's boundaries (see Figure \ref{fig:delayedimplementation}).
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/delayed_implementation.jpg}
+\caption{A time slice of the implemented delayed push-back method. The images are ordered from left-to-right and top-to-bottom.}
+\label{fig:delayedimplementation}
+\end{figure}
+
+The implementation of the instant push-back method was similar to the delayed push-back with a couple of small differences. The collision vector was not normalized, and there was no delay before moving the player's position. In every frame of application, the user was instantly pushed back to the last collision-free position if the collision was detected. To change the color of the object to green, the user had to keep pushing his head in the direction of the collision for the duration of a second (see Figure \ref{fig:instantimplementation}). 
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/instant_implementation.jpg}
+\caption{A time slice of the implemented instant push-back method. The images are ordered from left-to-right and top-to-bottom.}
+\label{fig:instantimplementation}
+\end{figure}
+
+In the teleportation technique, the collision vector was also not normalized, but this time there was a delay before the method started working. After the collision was detected and maintained for the duration of a second, the screen blinked for a moment to black, and the user was instantly teleported to the last collision-free position. After the teleportation occurred, the object's color was changed from red to green (see Figure \ref{fig:teleportimplementation}).
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/teleport_implementation.jpg}
+\caption{A time slice of the implemented teleportation method. The images are ordered from left-to-right and top-to-bottom.}
+\label{fig:teleportimplementation}
 \end{figure}
 
 \section{Experiment}
 
-The study employed a within-subject design. The independent variable was the solution to the VR head collisions problem, and it had four levels: screen fade, object fade, camera collider, camera push-back. Due to time constraints, the participants were required to complete the whole experiment with every method in one sitting. The order of tested solutions was assigned randomly with Latin Square counterbalancing. 
+The study employed a within-subject design. The independent variable was the solution to the VR head collisions problem, and it had four levels: screen fade, object fade, camera collider, camera push-back. Due to time constraints, the participants were required to complete the whole experiment with every method in one sitting. For each participant, the order of tested solutions was assigned randomly with Latin Square counterbalancing, where each combination could only be used once.
 
 \subsection{Equipment}
 
 Opis użytego sprzętu do przeprowadznia eksterymentu (Vive Headset, Vive Controllers, parametry laptopa, średnia liczba FPSów podczas eksperymentu).
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=1\textwidth]{img/equipment.png}
+\caption{equipment}
+\label{fig:equipment}
+\end{figure}
 
 \subsection{Participants}
 

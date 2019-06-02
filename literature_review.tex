@@ -5,7 +5,7 @@ With the launch and success of modern technologies like Oculus Rift, HTC Vive, o
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.85\textwidth]{img/stereoscopic.jpg}
-\caption{An example of the stereoscopic image that is displayed in VR headset (image source: \cite{STEREOSCOPIC_IMAGE})}
+\caption{An example of the stereoscopic image that is displayed in VR headset (image source: \cite{STEREOSCOPIC_IMAGE}).}
 \label{fig:STEREOSCOPIC}
 \end{figure}
 
@@ -23,7 +23,7 @@ Virtual reality has a long history that can be traced back even to 1962, when Mo
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.85\textwidth]{img/first_vr.png}
-\caption{The Sensorama and The Sword of Damocles, first attempts at creating virtual reality (image source: \cite{SENSORAMA_IMAGE}\cite{DAMOCLES})}
+\caption{The Sensorama and the Sword of Damocles, the first attempts at creating virtual reality (image source: \cite{SENSORAMA_IMAGE}\cite{DAMOCLES}).}
 \label{fig:FIRST_VR}
 \end{figure}
 
@@ -32,7 +32,7 @@ The renewed interest in VR started in 2012, when a Kickstarter crowdfunding camp
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/headsets.png}
-\caption{Modern popular VR headsets: Oculus Rift and Playstation VR (image source: \cite{OCULUS_HEADSET}\cite{PSVR_HEADSET})}
+\caption{Modern popular VR headsets: the Oculus Rift and the Playstation VR (image source: \cite{OCULUS_HEADSET}\cite{PSVR_HEADSET}).}
 \label{fig:CONTROLLERS}
 \end{figure}
 
@@ -43,7 +43,7 @@ As more companies enter the VR headset market, we can observe the rapid technolo
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/modern_controllers.png}
-\caption{Modern VR controllers: The Oculus Touch and HTC Vive Controller (image source: \cite{VR_TECHNOLOGY}\cite{VIVE_IMAGE})}
+\caption{Modern VR controllers: the Oculus Touch and the HTC Vive Controller (image source: \cite{VR_TECHNOLOGY}\cite{VIVE_IMAGE}).}
 \label{fig:CONTROLLERS_IMAGE}
 \end{figure}
 
@@ -52,7 +52,7 @@ The illusion of traversing an endless space can be achieved with the help of nav
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.85\textwidth]{img/vr_threadmills.png}
-\caption{Omnidirectional treadmills: Virtuix Omni and WalkMouse (image source: \cite{VR_TECHNOLOGY})}
+\caption{Omnidirectional treadmills: the Virtuix Omni and the WalkMouse (image source: \cite{VR_TECHNOLOGY}).}
 \label{fig:VIRTUX_IMAGE}
 \end{figure}
 
@@ -63,7 +63,7 @@ Gesture tracking can be achieved with numerous input devices that are not necess
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.6\textwidth]{img/base_stations.png}
-\caption{Vive Base Stations: inside-out laser-based tracking system (image source: \cite{VIVE})}
+\caption{The Vive Base Stations: inside-out laser-based tracking system (image source: \cite{VIVE}).}
 \label{fig:BASE_STATIONS}
 \end{figure}
 
@@ -82,7 +82,7 @@ There are also other contributing factors to VR sickness, not necessarily relate
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.85\textwidth]{img/static_background.png}
-\caption{Static visual background, a technqiue used to reduce VR sickness symptoms (image source: \cite{STATICBACKGROUND})}
+\caption{Static visual background, a technqiue used to reduce VR sickness symptoms (image source: \cite{STATICBACKGROUND}).}
 \label{fig:STATIC_BACKGROUND}
 \end{figure}
 
@@ -117,7 +117,7 @@ In his literature review, C. Boletsis proposes locomotion typology with four dif
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/locomotion_typology.png}
-\caption{The VR locomotion typology (image source: \cite{LOCOMOTIONREVIEW})}
+\caption{The VR locomotion typology (image source: \cite{LOCOMOTIONREVIEW}).}
 \label{fig:TYPOLOGY}
 \end{figure}
 
@@ -126,13 +126,13 @@ Although there are many promising solutions to VR locomotion, currently only a h
 \begin{figure}[th]
 \centering
 \includegraphics[width=0.77\textwidth]{img/teleportation_curve.png}
-\caption{Point \& Teleport locomotion technique that uses a curve as the indicator for the teleportation path (image source: \cite{TELEPORTATIONCURVE})}
+\caption{The Point \& Teleport locomotion technique that uses a curve as the indicator for the teleportation path (image source: \cite{TELEPORTATIONCURVE}).}
 \label{fig:TELEPORTATIONCURVEIMAGE}
 \end{figure}
 
 There are several tricks and best practices for designing VR locomotion. Oculus in their developer documentation \cite{OCULUSDOC} lists general guidelines for acceleration, speed, user control, and direction of locomotion. Accelerations in VR not initiated by the user's physical movement are the main cause of discomfort. It is best to avoid any unpredictable increases of the size, frequency, and duration of the acceleration. Manipulations of speed, such as slow-motion or unnaturally rapid velocity, have been reported to be less discomforting than a normal human pace. In the real world, humans most often move forward or stand in place. When the VR movement is necessary, it is best to prevent backing up or strafing as it can be unusual optic flow pattern to the users. Open environments are also generally more comfortable. Moving the users through enclosed spaces, such as tunnels or hallways, should be avoided.
 
-\section{VR Head Collisions Problem}
+\section{Problem of VR Head Collisions}
 
 Although modern VR games use different techniques to move the player's avatar in the virtual environment, most of them have one thing in common. They use tracking systems to estimate the position and rotation of the user's head. The player now gets the ability to look around the virtual world with physical head movements without the need of additional input controllers. Head tracking increases the feeling of presence in virtual reality. It also drastically reduces VR sickness symptoms that are caused due to the mismatch between vestibular and visual senses \cite{HEADTRACKINGSYMPTOMS}. However, positional head tracking introduces a significant problem with head-object collisions in the virtual scene.
 
@@ -143,7 +143,7 @@ With the addition of head tracking to VR games, some of the camera control rules
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/clipping.png}
-\caption{In the game Fallout 4 VR, players can see through the walls when they lean against them (image source: \cite{redditfallout})}
+\caption{In the game Fallout 4 VR, players can see through the walls when they lean against them (image source: \cite{redditfallout}).}
 \label{fig:FALLOUTCLIPPING}
 \end{figure}
 
@@ -162,14 +162,14 @@ Many developers ignore the head collision problem and decide to not handle it in
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/screen_fade.png}
-\caption{Time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE})}
+\caption{A time slice example of the screen fade technique. When the head collision is detected, the screen slowly fades to black (image source: \cite{SCREENFADE}).}
 \label{fig:SCREENFADEIMAGE}
 \end{figure}
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/object_fade.png}
-\caption{Time slice example of the object fade technique. The closer the camera gets to the collision, the more the colliding object is faded out (image source: \cite{OBJECTFADE})}
+\caption{A time slice example of the object fade technique. The closer the camera gets to the collision, the more the colliding object is faded out (image source: \cite{OBJECTFADE}).}
 \label{fig:OBJECTFADEIMAGE}
 \end{figure}
 
@@ -181,4 +181,4 @@ Some VR developers try completely different approach by designing the whole game
 
 In recent years, there has been growing interest in VR technology. Modern VR headsets offer an affordable VR experience that is easy to set up in a home setting. The HTC Vive aims at providing immersive room-scale VR, whereas other companies focus on seated experience that does not require large tracking space and additional inside-out tracking devices. The hand worn controllers, which support 6DoF tracking information, are the current standard for handling input in almost every VR system. They track the movement of the user's hands, allow him to pick up objects in the virtual world, and are useful in many locomotion techniques. In Point \& Teleport technique, they allow for an easy manipulation of the teleportation curve. Most often, VR headsets are also equipped with some sort of head tracking system. Head tracking greatly increases the feeling of presence in virtual world and reduces the symptoms of VR sickness.
 
-The commercial success of VR headsets has brought the attention of many academic researchers. There have been a lot of studies into comfortable and immersive locomotion techniques that can be used in virtual reality. VR experience is often measured using questionnaires about satisfaction, the sense of presence in VR, and the symptoms of simulator sickness. The consensus is that the teleportation methods are best suited for seated VR experience in terms of usability and preventing VR sickness. Although the topic of locomotion is widely studied, researchers have not treated head tracking in much detail. Apart from the recent study about ``not there yet'' approach, there is almost no academic work on the VR head collisions problem. This thesis examines the most popular methods for solving the problem and tries to propose the best solution.
+The commercial success of VR headsets has brought the attention of many academic researchers. There have been a lot of studies into comfortable and immersive locomotion techniques that can be used in virtual reality. VR experience is often measured using questionnaires about satisfaction, the sense of presence in VR, and the symptoms of simulator sickness. The consensus is that the teleportation methods are best suited for seated VR experience in terms of usability and preventing VR sickness. Although the topic of locomotion is widely studied, researchers have not treated head tracking in much detail. Apart from the recent study about ``not there yet'' approach, there is almost no academic work on the problem of VR head collisions. This thesis examines the most popular methods for solving the problem and tries to propose the best solution.
