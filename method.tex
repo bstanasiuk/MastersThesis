@@ -19,7 +19,7 @@ The quality of VR experience is affected by many factors. VR sickness, the sense
 \item RQ3: How usable are the proposed solutions to the problem of VR head collisions?
 \end{itemize}
 
-The three null hypotheses corresponding to the research questions are as follows:
+Three null hypotheses corresponding to the research questions are as follows:
 
 \begin{itemize}
 \item H$_{\text{01}}$: All proposed solutions to the problem of VR head collisions have the same effect on the virtual reality sickness.
@@ -45,7 +45,7 @@ The VR sickness section of post-test questionnaire was prepared using the Simula
 
 \subsection{Presence Questionnaire}
 
-The Slayer-Usoh-Steed (SUS) \cite{SUS} presence questionnaire was used to prepare the second section of post-test questionnaire. It was chosen for this study because it is the second most cited presence questionnaire applicable for VR \cite{SUSEVIDENCE}, and it has a relatively short list of six questions in comparison to other, longer questionnaires. All SUS questions are based on one of the three themes: the extent to which the virtual environment becomes the dominant reality, the sense of being in the virtual environment, and the extent to which the virtual environment is remembered as a ``place''. Each question is answered on a scale from 1 to 7, where the higher score indicates greater sense of presence. The final presence score is a number of answers that have a score of 6 or 7.
+The Slayer-Usoh-Steed (SUS) \cite{SUS} presence questionnaire was used to prepare the second section of post-test questionnaire. It was chosen for this study because it is the second most cited presence questionnaire applicable for VR \cite{SUSEVIDENCE}, and it has a relatively short list of six questions in comparison to other, longer questionnaires. All SUS questions are based on one of the three themes: the extent to which the virtual environment becomes the dominant reality, the sense of being in the virtual environment, and the extent to which the virtual environment is remembered as a ``place''. Each question is answered on a scale from 1 to 7, where the higher score indicates the greater sense of presence. The final presence score is a number of answers that have a score of 6 or 7.
 
 \subsection{Usability Questionnaire}
 
@@ -53,11 +53,11 @@ In the usability section, the participants rated eight different factors: diffic
 
 \section{Implementation}
 
-The virtual environment used in the experiment was implemented using the Unity game engine (version 2018.3.6) \cite{UNITY}. Unity is a cross-platform engine that allows creating high-quality 3D games and natively supports VR development. The SteamVR Unity Plugin (version 1.2.3) \cite{STEAMVR}, a software development kit and application programming interface developed by Valve, was used to smoothly interface virtual reality headset with Unity. SteamVR Unity Plugin manages the following functions: loading 3D models for VR controllers, handling input from the controllers, and estimating what the hands look like while using those controllers. Additionally, the application used some functionality of the Virtual Reality Toolkit (VRTK) (version 3.3.0) \cite{VRTK}. VRTK is a collection of useful design patterns and pre-built assets that aid solving common problems found when building for virtual reality. It covers common solutions for locomotion within virtual space, interactions with virtual objects and UI elements, body physics, and much more. 
+The virtual environment used in the experiment was implemented using the Unity game engine (version 2018.3.6) \cite{UNITY}. Unity is a cross-platform engine that allows creating high-quality 3D games and natively supports VR development. The SteamVR Unity Plugin (version 1.2.3) \cite{STEAMVR}, a software development kit and application programming interface developed by Valve, was used to smoothly interface virtual reality headset with Unity. The plugin manages the following functions: loading 3D models for VR controllers, handling input from the controllers, and estimating what the hands look like while using those controllers. Additionally, the application used some functionality of the Virtual Reality Toolkit (VRTK) (version 3.3.0) \cite{VRTK}. VRTK is a collection of useful design patterns and pre-built assets that aid solving common problems found when building for virtual reality. It covers common solutions for locomotion within virtual space, interactions with virtual objects and UI elements, body physics, and much more. 
 
 \subsection{Virtual Environment}
 
-The virtual environment consisted of a large (30 x 30 m), blue platform with 10 red objects: a box, a ladder, a pallet, a shed, a barrel, and five different trees (see Figure \ref{fig:veimplementation}). The platform was surrounded by short mountains to prevent the users from wandering away from the designed experiment area. All 3D objects on the platform were imported from the free package found in the Unity Asset Store \cite{POLYGONCITY}. The platform itself was a scaled up cube model found in the default Unity assets. The terrain was generated by the Unity's built-in Terrain Engine.
+The virtual environment consisted of a large (30m x 30m), blue platform with 10 red objects: a box, a ladder, a pallet, a shed, a barrel, and five different trees (see Figure \ref{fig:veimplementation}). The platform was surrounded by short mountains to prevent users from wandering away from the designed experiment area. All 3D objects on the platform were imported from the free package found in the Unity Asset Store \cite{POLYGONCITY}. The platform itself was a scaled up cube model found in the default Unity assets. The terrain was generated by the Unity's built-in Terrain Engine.
 
 \begin{figure}[th]
 \centering
@@ -79,7 +79,7 @@ The goal for the user was to teleport closely to one of the objects in the virtu
 
 \subsection{Solutions to the problem of VR Head Collisions}
 
-To detect if the collision with the object occurred, a trigger sphere collider \cite{SPHERECOLLIDER} with the radius of 0.1 m was attached to the user's virtual head. For handling head collisions, four different solutions were implemented: screen fade, delayed push-back, instant push-back, and teleportation. The methods were implemented by replicating the mechanisms seen in popular VR applications. In the screen fade method, the whole screen gradually faded to black in the span of a second when the collision was detected. Once the user left the object's boundaries by retracting his head back, the object's color was changed from red to green, and the screen gradually returned back to normal in the span of a second (see Figure \ref{fig:fadeimplementation}). 
+To detect if the collision with the object occurred, a trigger sphere collider \cite{SPHERECOLLIDER} with the radius of 0.1 m was attached to the user's virtual head. For handling head collisions, four different solutions were implemented: screen fade, delayed push-back, instant push-back, and teleportation. The solutions were implemented by replicating the mechanisms seen in popular VR applications. In the screen fade method, the whole screen gradually faded to black in the span of a second when the collision was detected. Once the user left the object's boundaries by retracting his head back, the object's color was changed from red to green, and the screen gradually returned back to normal in the span of a second (see Figure \ref{fig:fadeimplementation}). 
 
 \begin{figure}[th]
 \centering
@@ -106,7 +106,7 @@ The implementation of the instant push-back method was similar to the delayed pu
 \label{fig:instantimplementation}
 \end{figure}
 
-In the teleportation technique, the collision vector was also not normalized, but this time there was a delay before the method started working. After the collision was detected and maintained for the duration of a second, the screen blinked for a moment to black, and the user was instantly teleported to the last collision-free position. After the teleportation occurred, the object's color was changed from red to green (see Figure \ref{fig:teleportimplementation}).
+In the teleportation technique, the collision vector was also not normalized, and this time there was a delay before the method started working. After the collision was detected and maintained for the duration of a second, the screen blinked for a moment to black, and the user was instantly teleported to the last collision-free position. Once the teleportation occurred, the object's color was changed from red to green (see Figure \ref{fig:teleportimplementation}).
 
 \begin{figure}[th]
 \centering
@@ -121,19 +121,30 @@ The study employed a within-subject design. The independent variable was the sol
 
 \subsection{Equipment}
 
-Opis użytego sprzętu do przeprowadznia eksterymentu (Vive Headset, Vive Controllers, parametry laptopa, średnia liczba FPSów podczas eksperymentu).
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=1\textwidth]{img/equipment.png}
-\caption{equipment}
-\label{fig:equipment}
-\end{figure}
+The experiment took place in teaching laboratories with play spaces of approximately 3m x 3m. The participants were equipped with the HTC Vive head-mounted display and its 6DoF hand controller. HTC Vive provides a refresh rate of 90 Hz and a resolution of 2160 x 1200 pixels (1080 x 1200 pixels per eye) with 110$\textsuperscript{o}$ diagonal field of view. Additionally, two Base Stations of the HTC Vive Lighthouse System were used for tracking the head's position and rotation in a 3D environment, which was an integral part of the experiment. A laptop equipped with Nvidia GeForce GTX 1050ti graphic card, 8GB of main memory, and 3.5 GHz Intel Core i5 processor was used for running the implemented VR application. During the experiment, the VR application run at stable 90 frames per second.
 
 \subsection{Participants}
 
-Opis uczestników eksperymentu. Wyniki ankiety demograficznej.
+20 participants (3 females, 17 males) aged between 13 and 26 (\textit{M} = 19.65, \textit{SD} = 5.29) were recruited for the study. 12 of them were students of Computer Science master's degree (3 females, 9 males) aged between 23 and 26 (\textit{M} = 23.92, \textit{SD} = 1.08). The rest consisted of children from primary schools (8 males) aged between 13 and 14 (\textit{M} = 13.25, \textit{SD} = 0.46). 9 participants reported that they never experienced motion sickness. This group was particularly instructed about the symptoms of VR sickness. 40\% of the participants have never used a VR headset before and were instructed in details how to use one. See Figure \ref{fig:demographic_charts} for additional charts illustrating the background of the participants.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=0.99\textwidth]{img/demographic_charts.png}
+\caption{A couple of pie charts illustrating the background of the participants.}
+\label{fig:demographic_charts}
+\end{figure}
 
 \subsection{Procedure}
 
-Opis przebiegu eksperymentu.
+Upon arriving in the teaching laboratory where the experiment took place, the participants were given a broad overview of the research problem. They were introduced to the main goal of the study and instructed about the task they had to do while present in the virtual environment. Because only a single HTC Vive equipment was available, the participants had to take turns to complete the experiment. Before equipping the headset, the participants were asked to fill in a demographic questionnaire (see Appendix A) about age, gender, previous experiences with motion sickness, and previous experiences with VR headsets.
+
+Once a participant finished filling in the demographic questionnaire and was acquainted with the instructions, he equipped the headset and started testing one of the solutions to the problem of VR head collisions (see Figure \ref{fig:equipment}). His assigned task was to collide with every obstacle in the presented virtual environment. The participant was not told which solution he is testing, and he had to discover on his own how the method is working. Once he successfully collided with the object and observed the effects of the method, the obstacle's color was changed from red to green. 
+
+The participant tested the method until every obstacle in the virtual environment was turned green. On average, it took the participants 2.37 (\textit{SD} = 0.62) minutes to complete this task. Once done, the participant was asked to take off the headset and fill in a post-test questionnaire (see Appendix B). In this questionnaire he described what VR sickness symptoms he felt during the experiment, answered to six questions about the sense of presence, and rated the tested method with eight usability factors. Once the post-test questionnaire was finished, the participant moved on to test the next method. He repeated this process until each of the four methods were tested in this manner. Every participant tested the methods in a unique order.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1\textwidth]{img/equipment.png}
+\caption{The participants were equipped with the HTC Vive headset and its 6DoF hand controller.}
+\label{fig:equipment}
+\end{figure}
