@@ -68,6 +68,8 @@ The virtual environment consisted of a large (30m x 30m), blue platform with 10 
 
 At the start of the application, the user of VR headset was placed in the center of the platform. The user could move through the virtual environment by using the ``Point \& Teleport'' locomotion technique. When the user pressed and held the trackpad on the controller, a blue teleportation curve appeared. He could then teleport by pointing with his hand and releasing the trackpad. The user could only teleport to areas on the platform that were not occupied by the 10 objects. When the area was not viable, the curve's color was changed from blue to red (see Figure \ref{fig:tpimplementation}). The teleportation locomotion was implemented with the help of VRTK\_HeightAdjustTeleport script \cite{VRTK_TELEPORT}.
 
+The goal for the user was to teleport closely to one of the objects in the virtual environment. Next, he had to lean his head towards the object with the purpose of colliding with it. Once the collision was detected, one of the implemented solutions to the problem of VR head collisions was activated. Finally, when the user left the object's boundaries due to the workings of the method, the object's color was changed to green. The green color indicated that the interaction with this object was completed successfully. The user had to repeat the process with each one of the 10 objects until every obstacle was turned green. Because of the need to test four different solutions to the problem of VR head collisions, four different  virtual environments were prepared for the study. All virtual environments were visually identical to each other, with the same placement of the 10 virtual obstacles. The only difference between them was the method of handling VR head collisions.
+
 \begin{figure}[th]
 \centering
 \includegraphics[width=1\textwidth]{img/implemented_teleportation.png}
@@ -75,9 +77,7 @@ At the start of the application, the user of VR headset was placed in the center
 \label{fig:tpimplementation}
 \end{figure}
 
-The goal for the user was to teleport closely to one of the objects in the virtual environment. Next, he had to lean his head towards the object with the purpose of colliding with it. Once the collision was detected, one of the implemented solutions to the problem of VR head collisions was activated. Finally, when the user left the object's boundaries due to the workings of the method, the object's color was changed to green. The green color indicated that the interaction with this object was completed successfully. The user had to repeat the process with each one of the 10 objects until every obstacle was turned green. Because of the need to test four different solutions to the problem of VR head collisions, four different  virtual environments were prepared for the study. All virtual environments were visually identical to each other, with the same placement of the 10 virtual obstacles. The only difference between them was the method of handling VR head collisions.
-
-\subsection{Solutions to Problem of VR Head Collisions}
+\subsection{Solutions to the Problem of VR Head Collisions}
 
 To detect if the collision with the object occurred, a trigger sphere collider \cite{SPHERECOLLIDER} with the radius of 0.1 m was attached to the user's virtual head. For handling head collisions, four different solutions were implemented: screen fade, delayed push-back, instant push-back, and teleportation. The solutions were implemented by replicating the mechanisms seen in popular VR applications. In the screen fade method, the whole screen gradually faded to black in the span of a second when the collision was detected. Once the user left the object's boundaries by retracting his head back, the object's color was changed from red to green, and the screen gradually returned back to normal in the span of a second (see Figure \ref{fig:fadeimplementation}). 
 
