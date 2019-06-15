@@ -8,7 +8,7 @@ There are several possible solutions to the problem of VR head collisions, and t
 \item Screen fade: When the head collision is detected, the whole screen fades to black in the span of a second. The view remains blacked-out for as long as the player's head collides with the object.
 \item Delayed push-back: If the player keeps colliding with the object for longer than a second, he is slowly pushed backwards until he leaves the object's boundaries.
 \item Instant push-back: When the user starts to collide with some obstacle, a collision vector is computed and its projection on the horizontal plane is immediately added to the player's position. This effectively moves the user away from the object, preventing him from ever looking inside it.
-\item Teleportation: If the collision is detected and maintained for the duration of a second, the player is instantly teleported to the last know valid position. 
+\item Teleportation: If the collision is detected and maintained for the duration of a second, the player is instantly teleported to the last known valid position. 
 \end{itemize}
 
 The quality of VR experience is affected by many factors. VR sickness, the sense of presence in virtual world, and the usability of the user interface are some of the main considerations in designing comfortable VR experience. Some developers consider different factors to be more important than others. For this reason, the proposed solutions to the problem of VR head collisions are examined from three different perspectives. The answers to the following research questions will help VR developers decide which particular solution to use:
